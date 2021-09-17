@@ -8,7 +8,7 @@ object Parameters {
 
 
 
-  val path_activity = "./dataset/activites/*"
+  val path_activity = "C:\\sparkProjects\\Milano\\dataset\\*"
   val path_pc = "./dataset/pc/*"
   val path_printer = "./dataset/printer/*"
   val path_product = "./dataset/product/*"
@@ -21,9 +21,14 @@ object Parameters {
   private def createTable(name: String, structType: StructType, path: String, delimiter: String = "\\t")
                          (implicit spark: SparkSession): Unit = {
     spark.read
-      .schema(structType)
-      .text(path).createTempView(name)
-
+      //.format("com.databricks.spark.csv")
+      //.option("inferSchema", "true")
+      .options(
+        Map(
+          "delimiter" -> delimiter,
+          "nullValue" -> "\\N"
+        )
+      ).schema(structType).csv(path).createOrReplaceTempView(name)
   }
 
   def initTables(implicit spark: SparkSession): Unit = {

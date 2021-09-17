@@ -13,13 +13,13 @@ object Parquet extends Enumeration {
 
   val structType = StructType(
     Seq(
-      StructField(square_id.toString, IntegerType),
-      StructField(time_interval.toString, DateType),
-      StructField(sms_in_activity.toString, DoubleType),
-      StructField(sms_out_activity.toString, DoubleType),
-      StructField(call_in_activity.toString, DoubleType),
-      StructField(call_out_activity.toString, DoubleType),
-      StructField(internet_traffic_activity.toString, DoubleType),
+      StructField(square_id.toString, StringType),
+      StructField(time_interval.toString, StringType),
+      StructField(sms_in_activity.toString, StringType),
+      StructField(sms_out_activity.toString, StringType),
+      StructField(call_in_activity.toString, StringType),
+      StructField(call_out_activity.toString, StringType),
+      StructField(internet_traffic_activity.toString, StringType),
       StructField(month.toString, StringType)
 
     )
