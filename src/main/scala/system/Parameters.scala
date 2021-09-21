@@ -11,6 +11,8 @@ object Parameters {
   val path_parquet = "C:\\sparkProjects\\Milano\\dataset\\*"
   val path_activity = "./output/activity/"
   val path_result_activity = "./output/activity/activity.csv"
+  val path_result_zone = "./output/zone"
+  val path_mi_grid = "C:\\sparkProjects\\Milano\\mi_grid\\*"
   val path_printer = "./dataset/printer/*"
   val path_product = "./dataset/product/*"
 
